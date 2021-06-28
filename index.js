@@ -12,15 +12,11 @@ const cssLifecycles = singleSpaCss({
   cssUrls: [staticBase + 'index.css']
 })
 
-const el = document.createElement('div')
-const id = `single-spa-application:${pkg.name}`
-el.setAttribute('id', id)
-
 const lifecycles = singleSpaCallbag({
-  target: document.body.appendChild(el),
+  name: `single-spa-application:${pkg.name}`,
   rootComponent: App
 })
 
 export const bootstrap = [cssLifecycles.bootstrap, lifecycles.bootstrap]
 export const mount = [cssLifecycles.mount, lifecycles.mount]
-export const unmount = [lifecycles.unmount]
+export const unmount = [cssLifecycles.unmount, lifecycles.unmount]
