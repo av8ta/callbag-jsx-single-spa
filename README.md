@@ -1,4 +1,6 @@
-This project shows how to create a single-spa application with Snowpack
+# [callbag-jsx-single-spa](https://github.com/av8ta/callbag-jsx-single-spa)
+
+This project shows how to create a [callbag-jsx](https://github.com/loreanvictor/callbag-jsx/) [single-spa](https://single-spa.js.org/) application built with [Snowpack](https://www.snowpack.dev/)
 
 ### Standalone Mode
 
@@ -17,7 +19,7 @@ You will also see any lint errors in the console.
 ```sh
 yarn start
 
-open 'http://single-spa-playground.org/playground/instant-test?name=snowpack-test&framework=react&useNativeModules=true&url=http%3A%2F%2Flocalhost%3A8080%2Findex.js'
+open 'http://single-spa-playground.org/playground/instant-test?name=callbag-jsx-single-spa&framework=other&useNativeModules=true&url=http%3A%2F%2Flocalhost%3A8080%2Findex.js'
 ```
 
 You can load this application into a single-spa root config via import-map-overrides. See more at https://single-spa.js.org/docs/recommended-setup#local-development

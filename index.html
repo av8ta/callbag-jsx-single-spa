@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Starter Snowpack App" />
-    <!-- <link rel="stylesheet" type="text/css" href="/index.css" /> -->
-    <title>Starter Snowpack App</title>
+    <title>Starter callbag-jsx single-spa App</title>
   </head>
   <body>
     <script type="module">
@@ -15,7 +14,7 @@
       } from 'https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/es2015/single-spa.dev.js'
 
       registerApplication({
-        name: 'snowpack-test',
+        name: 'callbag-jsx-single-spa',
         app: () => import('/index.js'),
         activeWhen: ['/']
       })

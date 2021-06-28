@@ -24,7 +24,7 @@ export default function (target) {
   renderer
     .render(
       <>
-        <div className="snowpack-test">
+        <div class="snowpack-test">
           <img
             src={singleSpaLogoUrl}
             alt="single-spa logo"
