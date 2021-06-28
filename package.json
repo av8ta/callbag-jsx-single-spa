@@ -30,9 +30,12 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@urql/core": "^2.1.4",
     "callbag-common": "^0.1.8",
     "callbag-jsx": "^0.1.13",
     "callbag-state": "^0.2.5",
-    "render-jsx": "^0.2.4"
+    "graphql": "^15.5.1",
+    "render-jsx": "^0.2.4",
+    "wonka": "^4.0.15"
   }
 }
