@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge')
 const SystemJSPublicPathWebpackPlugin = require('systemjs-webpack-interop/SystemJSPublicPathWebpackPlugin')
+const pkg = require('./package.json')
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
@@ -30,7 +31,7 @@ module.exports = {
             },
             plugins: [
               new SystemJSPublicPathWebpackPlugin({
-                systemjsModuleName: 'snowpack-test',
+                systemjsModuleName: pkg.name,
                 rootDirectoryLevel: 2
               })
             ]
@@ -52,6 +53,8 @@ module.exports = {
   },
   devOptions: {},
   buildOptions: {
-    baseUrl: 'http://localhost:8080/'
+    baseUrl: 'http://localhost:8080/',
+    jsxFactory: 'renderer.create',
+    jsxFragment: 'renderer.fragment'
   }
 }

@@ -1,8 +1,7 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import singleSpaReact from 'single-spa-react'
 import singleSpaCss from 'single-spa-css'
-import HelloWorld from './HelloWorld.jsx'
+import singleSpaCallbag from './lib/single-spa-callbag-jsx'
+import App from './src/index.jsx'
+import pkg from './package.json'
 
 const staticBase =
   typeof __webpack_public_path__ !== 'undefined'
@@ -13,14 +12,15 @@ const cssLifecycles = singleSpaCss({
   cssUrls: [staticBase + 'index.css']
 })
 
-const reactLifecycles = singleSpaReact({
-  React,
-  ReactDOM,
-  rootComponent: HelloWorld
+const el = document.createElement('div')
+const id = `single-spa-application:${pkg.name}`
+el.setAttribute('id', id)
+
+const lifecycles = singleSpaCallbag({
+  target: document.body.appendChild(el),
+  rootComponent: App
 })
 
-export const bootstrap = [cssLifecycles.bootstrap, reactLifecycles.bootstrap]
-
-export const mount = [cssLifecycles.mount, reactLifecycles.mount]
-
-export const unmount = [reactLifecycles.unmount, cssLifecycles.unmount]
+export const bootstrap = [cssLifecycles.bootstrap, lifecycles.bootstrap]
+export const mount = [cssLifecycles.mount, lifecycles.mount]
+export const unmount = [lifecycles.unmount]
