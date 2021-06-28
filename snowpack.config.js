@@ -9,6 +9,13 @@ module.exports = {
   },
   plugins: [
     [
+      '@snowpack/plugin-babel',
+      {
+        input: ['.js', '.mjs', '.jsx'], // (optional) specify files for Babel to transform
+        transformOptions: {
+          // babel transform options
+        }
+      },
       '@snowpack/plugin-webpack',
       {
         extendConfig(config) {
