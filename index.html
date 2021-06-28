@@ -11,16 +11,16 @@
     <script type="module">
       import {
         registerApplication,
-        start,
-      } from "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/es2015/single-spa.dev.js";
+        start
+      } from 'https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/es2015/single-spa.dev.js'
 
       registerApplication({
-        name: "snowpack-test",
-        app: () => import("/index.js"),
-        activeWhen: ["/"],
-      });
+        name: 'snowpack-test',
+        app: () => import('/index.js'),
+        activeWhen: ['/']
+      })
 
-      start();
+      start()
     </script>
   </body>
 </html>

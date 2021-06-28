@@ -1,5 +1,5 @@
-import React from "react";
-import singleSpaLogoUrl from "./single-spa-logo.png";
+import React from 'react'
+import singleSpaLogoUrl from './single-spa-logo.png'
 
 export default function HelloWorld(props) {
   return (
@@ -7,9 +7,9 @@ export default function HelloWorld(props) {
       <img
         src={singleSpaLogoUrl}
         alt="single-spa logo"
-        style={{ width: "40px" }}
+        style={{ width: '40px' }}
       />
       Hello from your react + snowpack + single-spa application
     </div>
-  );
+  )
 }
