@@ -6,7 +6,7 @@ const input = state('')
 const markdown = expr($ => marked($(input)))
 
 export const Markdown = ({}, renderer) => (
-  <>
+  <div class="flex flex-row space-x-4">
     <textarea
       _state={input}
       placeholder="type some markdown"
@@ -14,5 +14,5 @@ export const Markdown = ({}, renderer) => (
       rows="10"
     />
     <div _content={markdown} />
-  </>
+  </div>
 )
