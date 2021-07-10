@@ -106,26 +106,51 @@ function BitcoinVolumesList({ operation }, renderer) {
     })
   )
 
+  const styles = {
+    display: 'inline-block',
+    'border-radius.px': 7,
+    'padding.px': 16,
+    'box-shadow': '0 3px 6px rgba(0, 0, 0, .25)'
+  }
   return (
-    <ul>
-      <List
-        of={transactions}
-        each={txVolUSD => (
-          <li>
-            <BitcoinVolume volume={txVolUSD}></BitcoinVolume>
-          </li>
-        )}
-      />
-    </ul>
+    <Card styles={styles}>
+      <ul>
+        <List
+          of={transactions}
+          each={txVolUSD => (
+            <li>
+              <BitcoinVolume volume={txVolUSD}></BitcoinVolume>
+            </li>
+          )}
+        />
+      </ul>
+    </Card>
   )
 }
 function BitcoinVolume({ volume }, renderer) {
   this.onBind(console.log('onBind:BitcoinVolume'))
-
+  const classes = state([
+    'card',
+    'shadow-2xl',
+    'lg:card-side',
+    'bg-primary',
+    'text-primary-content'
+  ])
   return (
-    <span>
-      date: {volume.sub('date').sub('date')} txVolUSD: {volume.sub('txVolUSD')}
-    </span>
+    <Card classes={classes}>
+      <span>
+        date: {volume.sub('date').sub('date')} txVolUSD:{' '}
+        {volume.sub('txVolUSD')}
+      </span>
+    </Card>
+  )
+}
+
+function Card({ classes, styles }, renderer, children) {
+  return (
+    <div style={styles} class={classes}>
+      {children}
+    </div>
   )
 }
 
